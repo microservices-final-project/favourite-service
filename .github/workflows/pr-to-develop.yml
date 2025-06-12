@@ -6,7 +6,7 @@ on:
 
 jobs:
   call-sonar:
-    uses: ${{ github.repository_owner }}/ci-templates/.github/workflows/sonarqube-analysis.yaml@main
+    uses: microservices-final-project/ci-templates/.github/workflows/sonarqube-analysis.yaml@main
     with:
       projectKey: favourite-service
       projectName: Favourite Service
