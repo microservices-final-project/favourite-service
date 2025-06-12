@@ -1,4 +1,4 @@
-package com.selimhorri.app.service;
+package com.selimhorri.app.unit.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -28,7 +28,6 @@ import com.selimhorri.app.exception.wrapper.DuplicateEntityException;
 import com.selimhorri.app.exception.wrapper.FavouriteNotFoundException;
 import com.selimhorri.app.exception.wrapper.ProductNotFoundException;
 import com.selimhorri.app.exception.wrapper.UserNotFoundException;
-import com.selimhorri.app.helper.FavouriteMappingHelper;
 import com.selimhorri.app.repository.FavouriteRepository;
 import com.selimhorri.app.service.impl.FavouriteServiceImpl;
 

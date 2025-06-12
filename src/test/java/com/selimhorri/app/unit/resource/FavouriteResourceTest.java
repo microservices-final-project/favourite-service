@@ -1,4 +1,4 @@
-package com.selimhorri.app.resource;
+package com.selimhorri.app.unit.resource;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import com.selimhorri.app.domain.id.FavouriteId;
 import com.selimhorri.app.dto.FavouriteDto;
 import com.selimhorri.app.dto.response.collection.DtoCollectionResponse;
+import com.selimhorri.app.resource.FavouriteResource;
 import com.selimhorri.app.service.FavouriteService;
 
 @ExtendWith(MockitoExtension.class)
@@ -30,6 +31,7 @@ class FavouriteResourceTest {
     private FavouriteResource favouriteResource;
 
     private FavouriteDto favouriteDto;
+    @SuppressWarnings("unused")
     private FavouriteId favouriteId;
 
     @BeforeEach

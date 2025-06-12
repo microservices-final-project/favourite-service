@@ -50,7 +50,7 @@ public class ApiExceptionHandler {
 	public <T extends RuntimeException> ResponseEntity<ExceptionMsg> handleApiBadRequestException(final T e) {
 
 		log.info("**ApiExceptionHandler controller, handle API request*\n");
-		final var badRequest = HttpStatus.BAD_REQUEST;
+		final var badRequest = HttpStatus.CONFLICT;
 
 		return new ResponseEntity<>(
 				ExceptionMsg.builder()
