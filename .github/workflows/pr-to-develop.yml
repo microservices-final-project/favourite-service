@@ -6,10 +6,8 @@ on:
 
 jobs:
   call-sonar:
-    uses: microservices-final-project/ci-templates/.github/workflows/sonarqube-analysis.yaml@main
-    with:
-      projectKeyBase: favourite-service
-      projectNameBase: Favourite Service
+    uses: microservices-final-project/ci-templates/.github/workflows/pr-to-develop.yaml@main
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      
