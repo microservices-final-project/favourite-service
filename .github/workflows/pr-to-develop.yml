@@ -5,11 +5,26 @@ on:
     branches: [develop]
 
 jobs:
+  sanitize-and-call-sonar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Sanitize branch name
+        id: sanitize
+        run: |
+          RAW_NAME="${{ github.head_ref }}"
+          SAFE_NAME=$(echo "$RAW_NAME" | tr '/' '-')
+          echo "safe_name=$SAFE_NAME" >> $GITHUB_OUTPUT
+
+    outputs:
+      safe_branch_name: ${{ steps.sanitize.outputs.safe_name }}
+
   call-sonar:
+    needs: sanitize-and-call-sonar
     uses: microservices-final-project/ci-templates/.github/workflows/sonarqube-analysis.yaml@main
     with:
-      projectKey: favourite-service
-      projectName: Favourite Service
+      projectKey: favourite-service-${{ needs.sanitize-and-call-sonar.outputs.safe_branch_name }}
+      projectName: Favourite Service (${{ needs.sanitize-and-call-sonar.outputs.safe_branch_name }})
     secrets:
       SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
