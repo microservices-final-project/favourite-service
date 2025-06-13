@@ -27,14 +27,13 @@ abstract public class AbstractMappedEntity implements Serializable {
 	
 	@CreatedDate
 	@JsonFormat(shape = Shape.STRING)
-	@Column(name = "created_at")
+	@Column(name = "created_at", nullable = true	)
 	private Instant createdAt;
 	
 	@LastModifiedDate
 	@JsonFormat(shape = Shape.STRING)
-	@Column(name = "updated_at")
+	@Column(name = "updated_at", nullable = true)
 	private Instant updatedAt;
-	
 }
 
 
