@@ -61,7 +61,6 @@ public class FavouriteResource {
 		this.favouriteService.deleteById(new FavouriteId(Integer.parseInt(userId), Integer.parseInt(productId), null));
 		return ResponseEntity.ok(true);
 	}	
-	
 }
 
 
